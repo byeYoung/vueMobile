@@ -1,5 +1,4 @@
 
-
 function Adaptation() {
   document.addEventListener('DOMContentLoaded', function () {
     let html = document.documentElement;

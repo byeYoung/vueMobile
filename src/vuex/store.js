@@ -7,7 +7,9 @@ const store = new Vuex.Store({
   state: {
     projects: {
     },
-    b:''
+    b:'',
+    echo:null
+
   },
   actions: {
     changeDate:function ({ commit }) {
@@ -21,6 +23,7 @@ const store = new Vuex.Store({
     msgFn({ commit, state }, msg) {
       state.b = msg;
       commit('add')
+
     }
   },
   mutations: {

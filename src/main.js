@@ -4,6 +4,7 @@ import App from './App'
 import router from './router'
 import $ from 'jquery'
 import axios from 'axios'
+import VueBus from 'vue-bus';
 import store from './vuex/store'
 import {} from './directive/directive'
 Vue.prototype.http =axios;
@@ -15,6 +16,7 @@ new Vue({
   $,
   store,
   axios,
+  VueBus,
   template: '<App/>',
   components: { App }
 });

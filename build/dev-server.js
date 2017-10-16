@@ -89,4 +89,13 @@ module.exports = {
   close: () => {
     server.close()
   }
-}
+};
+// var proxyMiddleware = require('http-proxy-middleware')
+// var server = express();
+//
+// server.middleware = [
+//   proxyMiddleware(['/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action'], {target: 'https://www.phtfdata.com/pht', changeOrigin: true}),
+//
+// ];
+//
+// server.use(server.middleware);

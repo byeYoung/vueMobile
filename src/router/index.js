@@ -1,29 +1,31 @@
+
 import Vue from 'vue'
-import Router from 'vue-router'
-import Index from '@/pages/phtIndex.vue'
-import Data from '@/pages/finddata.vue'
-import aboutUS from '@/pages/aboutUs'
-
-Vue.use(Router);
-
-export default new Router({
-  mode:'hash',
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+const home = resolve => require(['../pages/home/home.vue'], resolve);
+const about = resolve => require(['../pages/about/about.vue'], resolve);
+const safety = resolve => require(['../pages/safety/safety.vue'], resolve);
+const router = new VueRouter({
+  base: 'phtPc',
+  mode: 'history',
+  saveScrollPosition: true,
   routes: [
     {
-      path: '/phtMobile',
-      component: Index
+      path: '*',
+      component: home,
+
     },
     {
-      path: "*",
-      redirect: '/phtMobile'
+      path: '*/about',
+      component: about,
+
     },
     {
-      path:'/findData',
-      component: Data
+      path: '*/safety',
+      component: safety,
+
     },
-    {
-      path:'*/aboutUs',
-      component: aboutUS
-    }
+
   ]
-})
+});
+export default router;

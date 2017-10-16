@@ -1,0 +1,56 @@
+<template>
+  <div class="phtIndex" v-title="'金梧桐'">
+  <heard></heard>
+    <pc-nav></pc-nav>
+    <button @click="getData()">获取数据</button>
+  </div>
+
+</template>
+
+<script>
+  import {Adaptation} from '../../assets/js/common'
+  import {phtservice}  from '../../assets/js/phtservice'
+  import heard from '../../components/heard/heard.vue'
+  import pcNav from '../../components/nav/nav.vue'
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods:{
+      getData:function () {
+        let headerData =phtservice.header('','pc','web','project_platform','1.0');
+        let data ={
+          headerData,
+          'request': {
+            'params': {
+              'CURR_PAGE_NUM': 1,
+              'CUST_ID': '151318',
+              'CUST_TYPE': '1',
+              'PER_PAGE_SIZE': 4,
+              'PROJ_CODE': 'DPS201710110001',
+              'QUERY_TYPE': '3',
+              'USER_ID': '151318',
+              'USER_TYPE': '1'
+            },
+            'saveOperTokenCode': '',
+            'tokenCode': ''
+          }
+        };
+        phtservice.globalPostData('https://www.phtfdata.com/pht/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action',data).then((data)=>{console.log(data)}
+        )
+
+      }
+    },
+    components:{
+     heard,
+      pcNav
+    }
+  }
+</script>
+
+<style scoped>
+  @import '../../assets/css/common.css';
+
+
+</style>

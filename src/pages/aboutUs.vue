@@ -1,6 +1,7 @@
 <template>
-  <div class="aboutUs" @click="getPostData()">
 
+  <div class="aboutUs" @click="getPostData()">
+    <pht-nav></pht-nav>
   </div>
 </template>
 
@@ -17,14 +18,15 @@ export default {
        )
 
      }
+  },
+  components:{
+    phtNav
   }
   }
 </script>
 
 <style scoped>
   @import '../assets/css/common.css';
-  .aboutUs{
 
-  }
 
 </style>
