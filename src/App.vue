@@ -17,6 +17,9 @@ export default {
       parentCard: '金梧桐',
     }
   },
+  methods:{
+
+  },
   components:{
     heard,
     pcNav

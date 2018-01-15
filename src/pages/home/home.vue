@@ -3,11 +3,13 @@
     <div class="home_container"></div>
     {{card}}
     <button @click="getData()">试试看</button>
+    <pagination :pageNum="page" :showItem=5 :allpage=10  @currentPage = "currentPage"></pagination>
   </div>
 </template>
 
 <script>
   import {phtservice}  from '../../assets/js/phtservice'
+  import pagination    from '../../components/pagination/pagination.vue'
   import bus  from '../../assets/js/bus'
 export default {
   props:{
@@ -15,6 +17,7 @@ export default {
   },
    data () {
     return {
+      page:9
 
     }
 },
@@ -28,10 +31,14 @@ export default {
        phtservice.setStore('login',false);
 
      },
+    currentPage:function (data) {
+      this.page =data;
+
+    }
 
   },
 components:{
-
+  pagination
 }
 }
 </script>

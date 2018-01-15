@@ -29,9 +29,13 @@ export default {
        this.i =index;
        let flag =index;
        if (flag ===1){
-         this.$router.push({path:'/safety',meta: { navShow: false}})
+         this.$router.push({path:'/loop',meta: { navShow: false}})
        }else if(flag ===0) {
          this.$router.push({path:'/home'})
+       }else if (flag == 5) {
+          this.$router.push({path:'/about'})
+       } {
+
        }
 
      }

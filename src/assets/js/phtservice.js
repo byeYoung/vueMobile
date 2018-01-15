@@ -1,3 +1,4 @@
+//公共方法
 import axios from 'axios'
 let phtservice ={};
 /**

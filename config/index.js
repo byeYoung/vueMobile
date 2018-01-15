@@ -23,15 +23,24 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: 9000,
     proxyTable: {
-      // '/api': {
-      //   target: 'https://www.phtfdata.com/pht/',
-      //   changeOrigin: true,
-      //   pathRewrite: {
-      //     '^/api': ''
-      //   }
-      // }
+      '/api': {
+        target: 'http://139.129.12.93:8093',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      },
+      '/data': {
+        target: 'http://139.129.12.93:8093',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/data': ''
+        }
+      },
+
+
     },
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',

@@ -46,6 +46,7 @@ export default {
     margin: 0 auto;
     color: #fff;
     line-height: 30px;
+    font-size: 12px;
     font-family: "微软雅黑 ";
   }
   .heard_start{

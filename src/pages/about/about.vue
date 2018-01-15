@@ -3,12 +3,15 @@
   <heard></heard>
     <pc-nav></pc-nav>
     <button @click="getData()">获取数据</button>
+    <button @click="setGetData()">获取第二条数据</button>
+    <div class="globalData">
+      {{userInfo}}
+    </div>
   </div>
 
 </template>
 
 <script>
-  import {Adaptation} from '../../assets/js/common'
   import {phtservice}  from '../../assets/js/phtservice'
   import heard from '../../components/heard/heard.vue'
   import pcNav from '../../components/nav/nav.vue'
@@ -37,7 +40,25 @@
             'tokenCode': ''
           }
         };
-        phtservice.globalPostData('https://www.phtfdata.com/pht/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action',data).then((data)=>{console.log(data)}
+        phtservice.globalPostData('/api/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action',data).then((data)=>{console.log(data)}
+        )
+
+      },
+      setGetData:function() {
+
+        let headerData =phtservice.header('','pc','web','project_platform','1.0');
+        let data ={
+          headerData,
+          'request': {
+            'params': {
+              'BIND_TYPE':'1',
+              'PAY_FLAG':'1'
+            },
+            'saveOperTokenCode': '',
+            'tokenCode': ''
+          }
+        };
+        phtservice.globalPostData('/data/user/query/1.0/selectXwBank/1.0',data).then((data)=>{console.log(data)}
         )
 
       }
