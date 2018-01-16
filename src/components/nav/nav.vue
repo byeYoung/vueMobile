@@ -27,9 +27,10 @@ export default {
   methods:{
      pageSelect:function (item,index) {
        this.i =index;
+       console.log(this.i);
        let flag =index;
        if (flag ===1){
-         this.$router.push({path:'/loop',meta: { navShow: false}})
+         this.$router.push({path:'/loop'})
        }else if(flag ===0) {
          this.$router.push({path:'/home'})
        }else if (flag == 5) {

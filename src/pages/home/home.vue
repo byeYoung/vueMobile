@@ -1,5 +1,6 @@
 <template>
   <div class="home" v-title="'普惠通'">
+      <pc-nav></pc-nav>
     <div class="home_container"></div>
     {{card}}
     <button @click="getData()">试试看</button>
@@ -9,6 +10,7 @@
 
 <script>
   import {phtservice}  from '../../assets/js/phtservice'
+  import pcNav from '@/components/nav/nav.vue'
   import pagination    from '../../components/pagination/pagination.vue'
   import bus  from '../../assets/js/bus'
 export default {
@@ -38,7 +40,8 @@ export default {
 
   },
 components:{
-  pagination
+  pagination,
+  pcNav
 }
 }
 </script>

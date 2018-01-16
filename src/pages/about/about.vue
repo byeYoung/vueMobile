@@ -1,6 +1,5 @@
 <template>
   <div class="phtIndex" v-title="'金梧桐'">
-  <heard></heard>
     <pc-nav></pc-nav>
     <button @click="getData()">获取数据</button>
     <button @click="setGetData()">获取第二条数据</button>
@@ -64,7 +63,6 @@
       }
     },
     components:{
-     heard,
       pcNav
     }
   }
