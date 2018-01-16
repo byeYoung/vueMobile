@@ -5,9 +5,7 @@
         <img src="../../assets/images/3-首页logo9.png" alt="">
       </div>
     <div>
-      <ul>
-        <li v-for="(item ,index) in navList" @click="pageSelect(item ,index)"><span :class="{ active : i == index}">{{item}}</span></li>
-      </ul>
+    <router-link :to="/home" class="link"></router-link>
     </div>
     </div>
   </div>

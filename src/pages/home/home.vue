@@ -5,6 +5,10 @@
     {{card}}
     <button @click="getData()">试试看</button>
     <pagination :pageNum="page" :showItem=5 :allpage=10  @currentPage = "currentPage"></pagination>
+
+    <div class="lll">
+
+    </div>
   </div>
 </template>
 
