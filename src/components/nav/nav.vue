@@ -6,7 +6,7 @@
       </div>
     <div>
       <ul>
-        <li v-for="(item ,index) in navList" @click="pageSelect(item ,index)"><span :class="{active: i==index}">{{item}}</span></li>
+        <li v-for="(item ,index) in navList" @click="pageSelect(item ,index)"><span :class="{ active : i == index}">{{item}}</span></li>
       </ul>
     </div>
     </div>

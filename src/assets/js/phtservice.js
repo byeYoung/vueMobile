@@ -40,6 +40,9 @@ phtservice.header =function (clientid,device,platform,projectid,version) {
   return header
 };
 /**
+ * 
+ */
+/**
  * 存储localStorage
  */
 phtservice.setStore = (name, content) => {
