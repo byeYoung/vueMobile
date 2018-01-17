@@ -27,7 +27,6 @@ export default {
   methods:{
      pageSelect:function (item,index) {
        this.i =index;
-       console.log(this.i);
        let flag =index;
        if (flag ===1){
          this.$router.push({path:'/loop'})
