@@ -5,7 +5,9 @@
         <img src="../../assets/images/3-首页logo9.png" alt="">
       </div>
     <div>
-    <router-link :to="/home" class="link"></router-link>
+      <ul>
+        <li v-for="(item ,index) in navList" @click="pageSelect(item ,index)"><span :class="{ active : i == index}">{{item}}</span></li>
+      </ul>
     </div>
     </div>
   </div>
@@ -25,7 +27,6 @@ export default {
   methods:{
      pageSelect:function (item,index) {
        this.i =index;
-       console.log(this.i);
        let flag =index;
        if (flag ===1){
          this.$router.push({path:'/loop'})

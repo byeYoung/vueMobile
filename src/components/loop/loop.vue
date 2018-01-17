@@ -2,9 +2,9 @@
   <div class="loop">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url(../../../static/lbt1.jpg)"></div>
-        <div class="swiper-slide" style="background-image:url(../../../static/lbt2.jpg)"></div>
-        <div class="swiper-slide" style="background-image:url(../../../static/lbt3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
+        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515613199857.png')"></div>
+        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1512516321950.png')"></div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination swiper-pagination-white"></div>
@@ -30,7 +30,7 @@
       lunbo () {
         var swiper = new Swiper('.swiper-container', {
           loop: true,
-          autoplay: 1000,
+          autoplay: 3000,
           pagination : '.swiper-pagination',
           paginationClickable :true,
           preventClicks : false,

@@ -13,15 +13,11 @@
      </div>
 
    </div>
-    {{echo}}
   </div>
 </template>
 
 <script>
 export default {
-  props:{
-    echo: String
-  },
    data () {
     return {
     login:null

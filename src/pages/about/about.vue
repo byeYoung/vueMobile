@@ -1,6 +1,5 @@
 <template>
   <div class="phtIndex" v-title="'金梧桐'">
-    <pc-nav></pc-nav>
     <button @click="getData()">获取数据</button>
     <button @click="setGetData()">获取第二条数据</button>
     <div class="globalData">
@@ -16,7 +15,6 @@
 <script>
   import {phtservice}  from '../../assets/js/phtservice'
   import heard from '../../components/heard/heard.vue'
-  import pcNav from '../../components/nav/nav.vue'
   export default {
     data() {
       return {
@@ -66,7 +64,6 @@
       }
     },
     components:{
-      pcNav
     }
   }
 </script>
