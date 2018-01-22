@@ -9,6 +9,7 @@
 <script>
   import headTop from '@/components/headTop/head.vue'
   import pcNav from '@/components/nav/nav.vue'
+  import {mapGetters, mapActions,mapState} from 'vuex'
 export default {
   name: 'app',
   data () {
@@ -16,8 +17,16 @@ export default {
       parentMsg: '普惠通',
     }
   },
-  methods:{
+  computed: {
+    ...mapGetters(['navStatus'])
+  },
+  mounted(){
 
+  },
+  methods:{
+getNavStatus(){
+  return this.navStatus
+}
   },
   components:{
     headTop,

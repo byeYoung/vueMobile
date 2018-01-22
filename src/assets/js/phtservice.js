@@ -30,18 +30,22 @@ phtservice.globalPostData =function (url,data) {
 /**
  * 格式化数据
  */
-phtservice.header =function (clientid,device,platform,projectid,version) {
-  let header ={};
-  header.clientid =clientid;
-  header.device=device;
-  header.platform =platform;
-  header.projectid =projectid;
-  header.version =version;
-  return header
+phtservice.submitData =function (params) {
+  let submitData ={};
+  submitData.headerData ={
+    "clientid": "",
+ 		"device": "pc",
+ 		"platform": "web",
+ 		"projectid": "project_platform",
+ 		"version": "1.0"
+  }
+    submitData.request={}
+    submitData.request.params = params
+    submitData.saveOperTokenCode =''
+    submitData.tokenCode =''
+    return submitData
 };
-/**
- * 
- */
+
 /**
  * 存储localStorage
  */
