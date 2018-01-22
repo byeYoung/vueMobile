@@ -14,17 +14,31 @@
 </template>
 
 <script>
+  import {mapGetters, mapActions, mapState} from 'vuex'
 export default {
+   props:['navStatusData'],
    data () {
     return {
       navList:[
         '首页','安全保障','投资频道','账户管理','信息披露','关于我们'
       ],
-      i:0
+      i:''
 
     }
-},
+   },
+   created(){
+      this.initNavStatus()
+  },
   methods:{
+
+     initNavStatus:function () {
+       let _this =this
+       setTimeout(function () {
+         _this.i =_this.navStatusData
+         console.log(_this.i)
+     }, 110)
+
+     },
      pageSelect:function (item,index) {
        this.i =index;
        let flag =index;
