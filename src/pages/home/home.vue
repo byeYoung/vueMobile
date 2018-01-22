@@ -30,5 +30,5 @@ loop
 </script>
 
 <style scoped>
-  @import '../../assets/css/common.css';
+
 </style>

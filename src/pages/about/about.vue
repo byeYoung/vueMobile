@@ -14,7 +14,7 @@
 
 <script>
   import {phtservice}  from '../../assets/js/phtservice'
-  import heard from '../../components/heard/heard.vue'
+  import headTop from '../../components/headTop/head.vue'
   export default {
     data() {
       return {

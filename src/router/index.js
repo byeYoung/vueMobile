@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 const home = resolve => require(['../pages/home/home.vue'], resolve);
+const login = resolve => require(['../pages/login/login.vue'], resolve);
 const about = resolve => require(['../pages/about/about.vue'], resolve);
 const safety = resolve => require(['../pages/safety/safety.vue'], resolve);
 const router = new VueRouter({
@@ -13,6 +14,11 @@ const router = new VueRouter({
     {
       path: '*',
       component: home,
+
+    },
+    {
+      path: '*/login',
+      component: login,
 
     },
     {
