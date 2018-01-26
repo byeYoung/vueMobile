@@ -6,6 +6,10 @@ Vue.use(VueRouter);
 const home = resolve => require(['../pages/home/home.vue'], resolve);
 //登录
 const login = resolve => require(['../pages/login/login.vue'], resolve);
+//个人登录
+const perlogin = resolve => require(['../pages/login/perlogin.vue'], resolve);
+//企业登录
+const enterlogin = resolve => require(['../pages/login/enterlogin.vue'], resolve);
 //关于我们
 const about = resolve => require(['../pages/about/about.vue'], resolve);
 //安全保障
@@ -26,7 +30,15 @@ const router = new VueRouter({
     {
       path: '*/login',
       component: login,
-
+      children: [
+        {
+          path: '*/login/perlogin',
+          component: perlogin,
+        },{
+          path: '*/login/enterlogin',
+          component: enterlogin,
+        }
+      ]
     },
     {
       path: '*/about',

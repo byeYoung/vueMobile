@@ -1,3 +1,4 @@
+//抽离出来的存放各种 mutation 事件类型的模块
 //公共
 export const COM_NAV_STATUS     = 'COM_NAV_STATUS'
 export const COM_HEADER_STATUS  = 'COM_HEADER_STATUS'
