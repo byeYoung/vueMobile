@@ -29,9 +29,6 @@
 </template>
 
 <script>
-import heard from '../../components/heard/heard.vue'
-import pcNav from '../../components/nav/nav.vue'
-
 export default {
   data(){
     return {
