@@ -30,8 +30,10 @@
       'loginStatus','navStatus'])
   },
    methods:{
+     //调取action的方法
      ...mapActions({ setNavStatus: 'setNavStatus' }),
      getNavStatus () {
+       //给选中的当行赋值
        this.setNavStatus(5)
    },
   getData:function () {
@@ -49,26 +51,6 @@
       this.data = data
       phtservice.globalPostData('/api/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action',data).then((data)=>{console.log(data)}
       )
-    },
-
-    setGetData:function() {
-
-      let headerData =phtservice.header('','pc','web','project_platform','1.0');
-      let data ={
-        headerData,
-        'request': {
-          'params': {
-            'BIND_TYPE':'1',
-            'PAY_FLAG':'1'
-          },
-          'saveOperTokenCode': '',
-          'tokenCode': ''
-        }
-      };
-      console.log(data)
-      phtservice.globalPostData('/data/user/query/1.0/selectXwBank/1.0',data).then((data)=>{console.log(data)}
-      )
-
     }
   },
   components:{

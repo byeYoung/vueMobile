@@ -17,6 +17,7 @@
 
 <script>
   export default {
+    props:['getNavStatus'],
     data () {
       return {
         navList:[
@@ -27,8 +28,11 @@
           {listName: '信息披露' },
           {listName: '关于我们' }
         ],
-        i:0
+        i:''
       }
+    },
+    mounted(){
+      this.getStatus();
     },
     methods:{
       listSelect: function (list, index) {
@@ -44,10 +48,18 @@
         }else if(index == 4){
             this.$router.push("/home")
         }else if(index == 5){
-            this.$router.push("/home")
+            this.$router.push("/about")
         }else{}
+      },
+      getStatus:function () {
+        let _this = this;
+        setTimeout(() => {
+        _this.i=_this.getNavStatus
+
+      }, 120);
+
       }
-    }
+   }
   }
 </script>
 

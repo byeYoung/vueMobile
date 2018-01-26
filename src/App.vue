@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <head-top></head-top>
-    <pc-nav></pc-nav>
+    <pc-nav :getNavStatus = 'getNavStatus()'></pc-nav>
     <router-view></router-view>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 
   },
   methods:{
-getNavStatus(){
+ getNavStatus(){
   return this.navStatus
 }
   },
