@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import heard from '@/components/heard/heard.vue'
+  import heard from '@/components/headTop/head.vue'
   import pcNav from '@/components/nav/nav.vue'
   import {mapGetters, mapActions,mapState} from 'vuex'
 export default {

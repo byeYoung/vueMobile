@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="regPic ">
-                   <img src="../../assets/images/regist/zhucepeitu.png" alt="">
+                   <!-- <img src="../../assets/images/regist/zhucepeitu.png" alt=""> -->
                    <p>
                      <a href="javascript:;">企业用户注册	&gt;&gt;</a>
                    </p>
@@ -102,7 +102,7 @@ export default {
   text-align: center;
   font-size: 18px;
   font-weight: 600;
-  background: url(../../assets/images/regist/zhucutext.png) 0 0 no-repeat;
+  /* background: url(../../assets/images/regist/zhucutext.png) 0 0 no-repeat; */
 }
 .registCon{
   width: 496px;

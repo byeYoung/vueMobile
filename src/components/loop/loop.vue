@@ -1,74 +1,54 @@
 <template>
-  <div class="loop">
-    <div id="slide" class="flexslider">
-      <ul id="bannerUl" class="slides">
-        <li v-for="">
-          <img src="" />
-        </li>
-      </ul>
-    </div>
-    <!-- <div class="swiper-container">
+     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515613199857.png')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1512516321950.png')"></div>
-      </div> -->
+      </div>
       <!-- Add Pagination -->
-      <!-- <div class="swiper-pagination swiper-pagination-white"></div> -->
+       <div class="swiper-pagination swiper-pagination-white"></div>
       <!-- Add Arrows -->
-      <!-- <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
       <div class="swiper-button-prev swiper-button-white"></div>
-    </div> -->
+    </div>
 
   </div>
 </template>
 
 <script>
-  import { phtservice } from '../../js/phtservice'
-  import { mapState, mapGetters, mapActions } from 'vuex'
+
+  import Swiper from '../../../static/idangerous.swiper';
   export default {
     data () {
-
+      return {
+      }
     },
     mounted () {
-
+      this.lunbo()
     },
     methods: {
+      lunbo () {
+        var swiper = new Swiper('.swiper-container', {
+          loop: true,
+          autoplay: 3000,
+          pagination : '.swiper-pagination',
+          paginationClickable :true,
+          preventClicks : false,
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          noSwiping : true,
+          effect : false,
+          autoplayDisableOnInteraction : false,
+        });
+        $(".swiper-container").mouseenter(function () {//滑过悬停
+          swiper.stopAutoplay();//mySwiper 为上面你swiper实例化的名称
+        }).mouseleave(function(){//离开开启
+          swiper.startAutoplay();
+        });
+      }
 
     }
   }
-  // import Swiper from '../../../static/idangerous.swiper';
-  // export default {
-  //   data () {
-  //     return {
-  //     }
-  //   },
-  //   mounted () {
-  //     this.lunbo()
-  //   },
-  //   methods: {
-  //     lunbo () {
-  //       var swiper = new Swiper('.swiper-container', {
-  //         loop: true,
-  //         autoplay: 3000,
-  //         pagination : '.swiper-pagination',
-  //         paginationClickable :true,
-  //         preventClicks : false,
-  //         nextButton: '.swiper-button-next',
-  //         prevButton: '.swiper-button-prev',
-  //         noSwiping : true,
-  //         effect : false,
-  //         autoplayDisableOnInteraction : false,
-  //       });
-  //       $(".swiper-container").mouseenter(function () {//滑过悬停
-  //         swiper.stopAutoplay();//mySwiper 为上面你swiper实例化的名称
-  //       }).mouseleave(function(){//离开开启
-  //         swiper.startAutoplay();
-  //       });
-  //     }
-  //
-  //   }
-  // }
 </script>
 
 <style scoped>
