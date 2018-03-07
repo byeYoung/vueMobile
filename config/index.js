@@ -23,22 +23,8 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 9000,
+    port: 8033,
     proxyTable: {
-      '/api': {
-        target: 'http://139.129.12.93:8093',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      },
-      '/data': {
-        target: 'http://139.129.12.93:8093',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/data': ''
-        }
-      },
 
 
     },

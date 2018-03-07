@@ -44,7 +44,7 @@
         }else if(index == 4){
             this.$router.push("/home")
         }else if(index == 5){
-            this.$router.push("/home")
+            this.$router.push("/about")
         }else{}
       }
     }
