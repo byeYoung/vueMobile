@@ -1,9 +1,12 @@
 <template>
      <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
+      <div class="swiper-wrapper" v-for="">
+        <div class="swiper-slide">
+          
+        </div>
+        <!-- <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515613199857.png')"></div>
-        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1512516321950.png')"></div>
+        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1512516321950.png')"></div> -->
       </div>
       <!-- Add Pagination -->
        <div class="swiper-pagination swiper-pagination-white"></div>
