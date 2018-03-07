@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <head-top></head-top>
-    <pc-nav></pc-nav>
+    <heard></heard>
+      <pc-nav :navStatusData='getNavStatus()'></pc-nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import headTop from '@/components/headTop/head.vue'
+  import heard from '@/components/heard/heard.vue'
   import pcNav from '@/components/nav/nav.vue'
   import {mapGetters, mapActions,mapState} from 'vuex'
 export default {
@@ -29,12 +29,12 @@ getNavStatus(){
 }
   },
   components:{
-    headTop,
+    heard,
     pcNav
   }
 }
 </script>
 
 <style scoped>
-    @import './assets/css/common.css';
+
 </style>

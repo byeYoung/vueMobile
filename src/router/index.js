@@ -15,7 +15,7 @@ const about = resolve => require(['../pages/about/about.vue'], resolve);
 //安全保障
 const safety = resolve => require(['../pages/safety/safety.vue'], resolve);
 //个人注册
-const personageRegist = resolve => require(['../pages/regist/personageRegist.vue'], resolve);
+const perRegist = resolve => require(['../pages/regist/perRegist.vue'], resolve);
 
 const router = new VueRouter({
   base: 'phtPc',
@@ -51,8 +51,8 @@ const router = new VueRouter({
 
     },
     {
-      path: '*/personageRegist',
-      component: personageRegist,
+      path: '*/perRegist',
+      component: perRegist,
 
     },
 
