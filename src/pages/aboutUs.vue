@@ -2,6 +2,9 @@
 
   <div class="aboutUs" @click="getPostData()">
     <pht-nav></pht-nav>
+    <div class="">
+
+    </div>
   </div>
 </template>
 

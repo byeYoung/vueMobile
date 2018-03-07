@@ -6,6 +6,9 @@
     <div class="globalData">
       {{userInfo}}
     </div>
+    <div class="text">
+
+    </div>
   </div>
 
 </template>
