@@ -4,7 +4,7 @@
     <button @click="getData()">获取数据</button>
     <button @click="setGetData()">获取第二条数据</button>
     <div class="globalData">
-
+      <div></div>
     </div>
     <div class="text">
     {{loginStatus}}

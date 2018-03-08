@@ -53,7 +53,8 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+  @import '../../assets/css/common.css';
   .head{
     width:100%;
     height:30px;
