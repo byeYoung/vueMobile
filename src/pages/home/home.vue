@@ -29,7 +29,6 @@ computed: {
   mounted(){
     this.connectServer()
 
-
   },
 
   methods:{

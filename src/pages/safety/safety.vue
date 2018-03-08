@@ -111,8 +111,35 @@
 </template>
 
 <script>
+  import {mapGetters, mapActions,mapState} from 'vuex'
 export default {
+data(){
+  return{
 
+  }
+},computed: {
+  ...mapGetters([
+			'loginStatus','navStatus'
+
+		])
+  },
+  mounted(){
+    this.connectServer()
+
+
+  },
+
+  methods:{
+    ...mapActions({ setUserInfo: 'setUserInfo',
+    setNavStatus: 'setNavStatus' }),
+      connectServer() {
+      this.setNavStatus(1)
+      this.setUserInfo({data:'1111'})
+
+      }
+
+
+  },
 }
 </script>
 

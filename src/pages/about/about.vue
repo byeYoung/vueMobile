@@ -46,7 +46,7 @@
         'USER_ID': '151318',
         'USER_TYPE': '1'
       });
-      console.log(data)
+    //  console.log(data)
       this.data = data
       phtservice.globalPostData('/api/handler/ProjapprHandler!queryMainPageTotalDataFor4_0.action',data).then((data)=>{console.log(data)}
       )
@@ -69,7 +69,6 @@
       console.log(data)
       phtservice.globalPostData('/data/user/query/1.0/selectXwBank/1.0',data).then((data)=>{console.log(data)}
       )
-
     }
   },
   components:{
