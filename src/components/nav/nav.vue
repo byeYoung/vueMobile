@@ -27,10 +27,7 @@
     mounted(){
     },
     methods:{
-       setnatusList:function(index) {
-      },
-      listSelect: function (list, index){
-      }
+
     }
 }
 </script>
