@@ -156,7 +156,7 @@
           }
         }
         .bottom-right{
-          float: left;
+          float: right;
           img{
             height:100px;
           }
