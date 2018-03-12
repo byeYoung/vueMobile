@@ -32,27 +32,37 @@
 }
 </script>
 
-<style scoped>
-@import '../../assets/css/common.css';
+<style lang="less" scoped>
   .nav{
-    height: 60px;
+    height: 100%;
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #ccc;
 
   }
   .nav_container{
-    height: 100%;
+    height: 82px;
     width: 1000px;
     margin: 0 auto;
     background: #fff;
-    line-height: 60px;
+    line-height: 82px;
     font-family: '微软雅黑';
     font-size: 14px;
   }
   .nav_container ul li{
     display: inline-block;
-    margin-left: 40px;
+    width:90px;
+    text-align: center;
+    a{
+      font-size: 17px;
+      color: #6e6e6e;
+    }
+    .router-link-active{
+      color: rgb(153, 3, 2);
+    }
+  }
+  .nav_container ul li:hover a{
+    color: rgb(153, 3, 2);
   }
   .nav_container ul{
     float: right;
@@ -63,14 +73,13 @@
     cursor: pointer;
   }
   .nav_container .active{
-    color: red;
+    color: rgb(153, 3, 2);
   }
   .pic_box{
     float: left;
+    img{
+      vertical-align:middle;
+    }
   }
-  .router-link-active{
-    color:red
-  }
-
 
 </style>

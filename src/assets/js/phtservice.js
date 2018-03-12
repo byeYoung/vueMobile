@@ -32,7 +32,7 @@ phtservice.globalPostData =function (url,data) {
  */
 phtservice.submitData =function (params) {
   let submitData ={};
-  submitData.headerData ={
+  submitData.header ={
     "clientid": "",
  		"device": "pc",
  		"platform": "web",

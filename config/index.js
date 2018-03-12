@@ -25,7 +25,14 @@ module.exports = {
     env: require('./dev.env'),
     port: 8076,
     proxyTable: {
-
+      '/apis': {
+        // 测试环境
+        target: 'https://www.phtfdata.com',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '^/apis': ''   //需要rewrite重写的,
+        }
+      }
 
     },
     autoOpenBrowser: true,

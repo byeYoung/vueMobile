@@ -1,10 +1,7 @@
 <template>
-     <div class="swiper-container">
-      <div class="swiper-wrapper" v-for="">
-        <div class="swiper-slide">
-
-        </div>
-          <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
+  <div class="swiper-container">
+       <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515420731295.jpg')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1515613199857.png')"></div>
         <div class="swiper-slide" style="background-image:url('https://www.phtfdata.com//file/file/WEB_PIC/banner_pic//1512516321950.png')"></div>
@@ -14,8 +11,6 @@
       <!-- Add Arrows -->
       <div class="swiper-button-next swiper-button-white"></div>
       <div class="swiper-button-prev swiper-button-white"></div>
-    </div>
-
   </div>
 </template>
 
@@ -33,6 +28,9 @@
     },
     methods: {
       lunbo () {
+        phtservice.globalPostData('/apis/msgcenter/query/1.0/getBanner/1.0',phtservice.submitData({"FILE_TYPE": 'banner_pic'})).then((data) => {
+          console.log(data)
+        })
         var swiper = new Swiper('.swiper-container', {
           loop: true,
           autoplay: 3000,
