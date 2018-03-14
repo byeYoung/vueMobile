@@ -19,9 +19,12 @@ phtservice.globalGetData =function (url) {
  * post请求
  */
 phtservice.globalPostData =function (url,data) {
+  //新建一个Deferred 对象
   let deferred = $.Deferred();
+  //原来的deferred对象上返回另一个deferred对象；没有参数时，返回一个新的deferred对象，该对象的运行状态无法被改变；接受参数时，作用为在参数对象上部署deferred接口。
   let promise = deferred.promise();
   axios.post(url,data).then((data) => {
+    //改变Deferred对象的执行状态
     deferred.resolve(data.data.response.result.main_data);
   }, (err) => {
     deferred.resolve(err);
