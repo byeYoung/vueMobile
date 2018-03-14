@@ -21,6 +21,7 @@
   export default {
     data () {
       return {
+        bannerList:null
       }
     },
     mounted () {
@@ -29,7 +30,7 @@
     methods: {
       lunbo () {
         phtservice.globalPostData('/apis/msgcenter/query/1.0/getBanner/1.0',phtservice.submitData({"FILE_TYPE": 'banner_pic'})).then((data) => {
-          console.log(data)
+          this.bannerList =data;
         })
         var swiper = new Swiper('.swiper-container', {
           loop: true,
