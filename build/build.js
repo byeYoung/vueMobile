@@ -1,9 +1,10 @@
 require('./check-versions')()
-
+// 生产模式
 process.env.NODE_ENV = 'production'
 
 var ora = require('ora')
 var rm = require('rimraf')
+// node自带的文件路径工具
 var path = require('path')
 var chalk = require('chalk')
 var webpack = require('webpack')
