@@ -1,30 +1,34 @@
 require('./check-versions')()
 
 var config = require('../config')
+// 服务器开发者模式
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
 var opn = require('opn')
 var path = require('path')
+// node 服务器框架 wxpress
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
+// 根据不同的服务环境 获取webpack config  测试及生产使用webpack.prod.conf 开发模式使用webpack.dev.conf
 var webpackConfig = (process.env.NODE_ENV === 'testing' || process.env.NODE_ENV === 'production')
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
 
-// default port where dev server listens for incoming traffic
+// default port where dev server listens for incoming traffic 端口号
 var port = process.env.PORT || config.dev.port
-// automatically open browser, if not set will be false
+// automatically open browser, if not set will be false 是否自动打开浏览器
 var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
-// https://github.com/chimurai/http-proxy-middleware
+// https://github.com/chimurai/http-proxy-middleware  http代理
 var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
 
+// devMiddleware hotMiddleware 是用来使用热重载的
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true
