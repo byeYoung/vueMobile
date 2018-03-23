@@ -8,8 +8,8 @@
       <ul>
         <li><router-link :to="'home'">首页</router-link></li>
         <li><router-link :to="'safety'">安全保障</router-link></li>
-        <li><router-link :to="'channel'">投资频道</router-link></li>
-        <li><router-link :to="'accound'">账户管理</router-link></li>
+        <li><router-link :to="'invest'">投资频道</router-link></li>
+        <li><router-link :to="'account'">账户管理</router-link></li>
         <li><router-link :to="'information'">信息披露</router-link></li>
         <li><router-link :to="'about'">关于我们</router-link></li>
       </ul>

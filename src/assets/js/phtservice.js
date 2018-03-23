@@ -2,8 +2,16 @@
 import Jsrsasign,{KJUR,hex2b64} from 'jsrsasign';
 import axios from 'axios'
 let phtservice ={};
+
+/*
+* 手机号码的正则表达式
+* */
+phtservice.mobileReg = function (userName) {
+  let reg = /^0?(1[3-9][0-9])[0-9]{8}$/
+  return reg.test(userName)
+}
 /**
- * git请求
+ * get请求
  */
 phtservice.globalGetData =function (url) {
   let deferred = $.Deferred();
@@ -25,7 +33,7 @@ phtservice.globalPostData =function (url,data) {
   let promise = deferred.promise();
   axios.post(url,data).then((data) => {
     //改变Deferred对象的执行状态
-    deferred.resolve(data.data.response.result.main_data);
+      deferred.resolve(data.data.response)
   }, (err) => {
     deferred.resolve(err);
   });

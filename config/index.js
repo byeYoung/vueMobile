@@ -32,8 +32,15 @@ module.exports = {
         pathRewrite: {
           '^/apis': ''   //需要rewrite重写的,
         }
+      },
+      '/api': {
+        // 测试环境
+        target: 'http://139.129.12.93:8097',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '^/api': ''   //需要rewrite重写的,
+        }
       }
-
     },
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',

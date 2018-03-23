@@ -3,11 +3,13 @@
     <head-top></head-top>
       <pc-nav :navStatusData='getNavStatus()'></pc-nav>
       <router-view></router-view>
+      <bottom></bottom>
   </div>
 </template>
 
 <script>
   import headTop from '@/components/headTop/head.vue'
+  import  bottom from '@/components/bottom/bottom.vue'
   import pcNav from '@/components/nav/nav.vue'
   import {mapGetters, mapActions,mapState} from 'vuex'
 export default {
@@ -30,7 +32,8 @@ getNavStatus(){
   },
   components:{
     headTop,
-    pcNav
+    pcNav,
+    bottom
   }
 }
 </script>

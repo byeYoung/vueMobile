@@ -5,27 +5,27 @@
         <p class="linkp">友情链接</p>
         <ul class="friend-busi clearfix">
           <li>
-            <p><a href="http://www.cqsscsh.com/">重庆市四川商会</a></p>
-            <p><a href="http://www.bjscc.org/">云南省四川商会</a></p>
+            <p><a href="http://www.cqsscsh.com/" target="_blank">重庆市四川商会</a></p>
+            <p><a href="http://www.bjscc.org/"  target="_blank">云南省四川商会</a></p>
           </li>
           <li>
-            <p><a href="https://www.xwbank.com/">新网银行</a></p>
-            <p><a href="http://www.wdzj.com/">网贷之家</a></p>
+            <p><a href="https://www.xwbank.com/" target="_blank">新网银行</a></p>
+            <p><a href="http://www.wdzj.com/" target="_blank">网贷之家</a></p>
           </li>
           <li>
-            <p><a href="http://www.bjscc.org/">吉林省川渝商会</a></p>
-            <p><a href="http://www.sxscsh.com/">山西省四川商会</a></p>
+            <p><a href="http://www.bjscc.org/" target="_blank">吉林省川渝商会</a></p>
+            <p><a href="http://www.sxscsh.com/" target="_blank">山西省四川商会</a></p>
           </li>
           <li>
-            <p><a href="http://www.gzscsh.com/">贵州省四川总商会</a></p>
-            <p><a href="http://www.bjscc.org/">北京四川企业商会</a></p>
+            <p><a href="http://www.gzscsh.com/" target="_blank">贵州省四川总商会</a></p>
+            <p><a href="http://www.bjscc.org/" target="_blank">北京四川企业商会</a></p>
           </li>
           <li>
-            <p><a href="http://www.pki.org.cn/">国家信息安全工程技术研究中心</a></p>
-            <p><a href="http://www.csii.com.cn/">北京柯蓝软件系统股份有限公司</a></p>
+            <p><a href="http://www.pki.org.cn/" target="_blank">国家信息安全工程技术研究中心</a></p>
+            <p><a href="http://www.csii.com.cn/" target="_blank">北京柯蓝软件系统股份有限公司</a></p>
           </li>
           <li>
-            <p><a href="http://www.scsgsl.cn/">四川总商会</a></p>
+            <p><a href="http://www.scsgsl.cn/" target="_blank">四川总商会</a></p>
           </li>
         </ul>
       </div>
@@ -56,7 +56,7 @@
           <span>&copy;2017金梧桐 All Rights Reserved &nbsp;|</span>
           <span>北京普惠通数据信息技术有限公司 &nbsp;|</span>
           <span>京ICP备14046794号 -1  &nbsp;|</span>
-          <span><a href="">
+          <span><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802025070" target="_blank">
             <img src="../../assets/images/bottom/beian.png" alt="">
             京公网安备 11010802025070号
           </a></span>

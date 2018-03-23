@@ -6,16 +6,20 @@ Vue.use(VueRouter);
 const home = resolve => require(['../pages/home/home.vue'], resolve);
 //登录
 const login = resolve => require(['../pages/login/login.vue'], resolve);
-//个人登录
-//const perlogin = resolve => require(['../pages/login/perlogin.vue'], resolve);
-//企业登录
-//const enterlogin = resolve => require(['../pages/login/enterlogin.vue'], resolve);
+//账户中心
+const account = resolve => require(['../pages/account/account.vue'], resolve);
+//投资频道
+const invest = resolve => require(['../pages/invest/invest.vue'], resolve);
 //关于我们
 const about = resolve => require(['../pages/about/about.vue'], resolve);
 //安全保障
 const safety = resolve => require(['../pages/safety/safety.vue'], resolve);
+//信息披露
+const information = resolve => require(['../pages/information/information.vue'], resolve);
 //个人注册
 const perRegist = resolve => require(['../pages/regist/perRegist.vue'], resolve);
+//下载客户端
+const download = resolve => require(['../pages/download/download.vue'], resolve);
 
 const router = new VueRouter({
   base: 'phtPc',
@@ -30,7 +34,7 @@ const router = new VueRouter({
     {
       path: '*/login',
       component: login,
-    
+
     },
     {
       path: '*/about',
@@ -38,8 +42,28 @@ const router = new VueRouter({
 
     },
     {
+      path: '*/invest',
+      component: invest,
+
+    },
+    {
+      path: '*/account',
+      component: account,
+
+    },
+    {
       path: '*/safety',
       component: safety,
+
+    },
+    {
+      path: '*/information',
+      component: information,
+
+    },
+    {
+      path: '*/download',
+      component: download,
 
     },
     {

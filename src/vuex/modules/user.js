@@ -12,6 +12,7 @@ const state = {
     navStatus:null
 }
 
+//改变state状态
 const actions = {
   /**
    * 导航参数
@@ -44,6 +45,8 @@ const actions = {
      * 请求用户信息
      */
     getUserData({ commit }, id) {
+        //commit 提交的是方法触发状态变更   提交mutations
+        //通过提交 mutation 的方式追踪到状态的变化
         commit(types.COM_LOADING_STATUS, true)
         api.UserInfo(id)
             .then(res => {
@@ -54,7 +57,7 @@ const actions = {
 }
 
 const getters = {
-    getUserData: state => state.userData,
+    userData: state => state.userData,
     loginStatus: state => state.loginStatus,
     userInfo: state => state.userInfo,
     navStatus:state =>state.navStatus

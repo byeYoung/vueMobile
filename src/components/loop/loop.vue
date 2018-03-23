@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-container">
        <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="list in bannerList" :style="{backgroundImage: 'url(' +list.FILE_PATH+ ')'}"></div>
+        <div class="swiper-slide" v-for="list in bannerList" :style="{backgroundImage: 'url(' +list.FILE_PATH+ ')'}" @click="changeBanner(list)"></div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination swiper-pagination-white"></div>
@@ -27,7 +27,7 @@
     methods: {
       lunbo () {
         phtservice.globalPostData('/apis/msgcenter/query/1.0/getBanner/1.0',phtservice.submitData({"FILE_TYPE": 'banner_pic'})).then((data) => {
-          this.bannerList =data.data;
+          this.bannerList =data.result.main_data.data;
         })
         var swiper = new Swiper('.swiper-container', {
           loop: true,
@@ -54,8 +54,10 @@
         }).mouseleave(function(){//离开开启
           swiper.startAutoplay();
         });
+      },
+      changeBanner:function (list) {
+        window.open(list.LINK_COMMENT)
       }
-
     }
   }
 </script>

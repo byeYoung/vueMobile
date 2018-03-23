@@ -1,86 +1,106 @@
-<template lang="html">
+<template>
   <div class="personageRegist" v-title="'个人注册'">
-
-  <div class="loginForm">
-                <div class="registTitle">
-                   <span>个人用户注册</span>
-                </div>
-                <div class="registCon">
-                  <div class="userName">
-                      <em>*</em><span>手机号码：</span>
-                      <input type="text" v-model="username" placeholder="请输入手机号" />
-                  </div>
-                  <div class="userPaw">
-                      <em>*</em><span>设置密码：</span>
-                      <input type="password" v-model="password" placeholder="请输入密码" />
-                  </div>
-                  <div class="userPawReg">
-                      <em>*</em><span>确认密码：</span>
-                      <input type="password" v-model="passwordReg" placeholder="请输入确认密码" />
-                  </div>
-                  <div class="reName">
-                    <span>推荐人手机号：</span>
-                      <input type="text" v-model="reName" placeholder="请输入推荐人手机号" />
-                  </div>
-                  <div class="userCode">
-                        <span class="code">
-                          <em>*</em><span>手机号验证码：</span>
-                        </span>
-
-                      <input class="phoneCode" type="text" v-model="verificode" placeholder="手机验证码" />
-                      <span class="verifiCode" @click="getVerifiCode" v-show="!sendCode">
-                          获取验证码
-                      </span>
-                      <span class="verifiCode readonly" v-show="sendCode">
-                          {{timeOut}}秒重新获取
-                      </span>
-                  </div>
-                  <p class="regSelect">
-                      <input id="checkBox" v-model="toggle" type="checkbox"  @change="checkAgree()"/><span>我同意《<a href="javascript:;">金梧桐注册协议</a>》 </span>
-                  </p>
-                  <div class="loginBtn" @click="regist">下一步</div>
-                </div>
-
-                <div class="regPic ">
-                   <!-- <img src="../../assets/images/regist/zhucepeitu.png" alt=""> -->
-                   <p>
-                     <a href="javascript:;">企业用户注册	&gt;&gt;</a>
-                   </p>
-                </div>
-
-        </div>
-
-
-
+    <div class="loginForm">
+      <div class="registTitle">
+         <span>个人用户注册</span>
       </div>
+      <div class="registCon">
+        <div class="userName">
+            <em>*</em><span>手机号码：</span>
+            <input type="text" @blur="testMobile" v-model="userName" placeholder="请输入手机号" />
+        </div>
+        <div class="userPaw">
+            <em>*</em><span>设置密码：</span>
+            <input type="password" v-model="password" placeholder="请输入密码" />
+        </div>
+        <div class="userPawReg">
+            <em>*</em><span>确认密码：</span>
+            <input type="password" v-model="passwordReg" placeholder="请输入确认密码" />
+        </div>
+        <div class="reName">
+          <span>推荐人手机号：</span>
+            <input type="text" v-model="reName" placeholder="请输入推荐人手机号" />
+        </div>
+        <div class="userCode">
+              <span class="code">
+                <em>*</em><span>手机号验证码：</span>
+              </span>
+
+            <input class="phoneCode" type="text" v-model="verificode" placeholder="手机验证码" />
+            <span class="verifiCode" @click="getVerifiCode" v-show="!sendCode">
+                获取验证码
+            </span>
+            <span class="verifiCode readonly" v-show="sendCode">
+                {{timeOut}}秒重新获取
+            </span>
+        </div>
+        <p class="regSelect">
+            <input id="checkBox" v-model="toggle" type="checkbox"  @change="checkAgree()"/><span>我同意《<a href="javascript:;">金梧桐注册协议</a>》 </span>
+        </p>
+        <div class="loginBtn" @click="regist">下一步</div>
+      </div>
+
+      <div class="regPic ">
+         <!-- <img src="../../assets/images/regist/zhucepeitu.png" alt=""> -->
+         <p>
+           <a href="javascript:;">企业用户注册	&gt;&gt;</a>
+         </p>
+      </div>
+    </div>
+  </div>
 </template>
+
 <script>
+  import { phtservice } from '../../assets/js/phtservice'
+  export default {
+    data(){
+      return {
+        userName: '',
+         password: '',
+        passwordReg:'',
+        verificode:'',
+        reName:'',
+        sendCode: false,
+        timeOut: 60,
+        toggle:false,
+        flag:''
+     }
+   },
+   methods:{
+//      手机号是否存在
+     testMobile () {
+      phtservice.globalPostData('/apis/xwuser/query/1.0/validLoginCode/1.0',phtservice.submitData({"MOBILE":this.userName})).then( (data) => {
+        if(data.status == "00000000") {
+          alert("")
+        }
+      })
+     },
+//      获取手机验证码
+     getVerifiCode () {
+       let parmas = {
+         "MOBILE":"18809596600",
+         "USER_TYPE":"1",
+         "VALID_TYPE":"0"
+       }
+      phtservice.globalPostData('/apis/msgcenter/query/1.0/sendMessageValidCode/1.0',phtservice.submitData(parmas)).then((data) => {
+        if(data.status == "00000000") {
+          this.flag = '0'
+        }
+      })
+     },
+     checkAgree:function () {
 
-export default {
-  data(){
-    return {
-       username: '',
-       password: '',
-       verificode: '',
-       rename:'',
-       sendCode: false,
-       timeOut: 60,
-       toggle:false,
+     },
+     regist () {
+
+     }
+
+   },
+   components:{
+
    }
 
- },
- methods:{
-   checkAgree:function () {
-     console.log(this.toggle)
-
-   }
-
- },
- components:{
-
- }
-
-}
+  }
 </script>
 
 <style scoped>

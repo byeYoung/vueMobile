@@ -3,29 +3,29 @@
     <div class="headContainer">
       <span class="headTel">欢迎使用金梧桐互联网金融信息中介服务平台！ 客服电话: 400-6699-068</span>
       <ul class="loginInfo">
-        <li v-if="!loginUp" class="registerIn">
-            <router-link to="/home">
+        <li v-if="!loginStatus" class="registerIn">
+            <router-link to="/perRegist">
               <span>注册</span>
             </router-link>
         </li>
-        <li v-if="!loginUp" class="loginIn">
+        <li v-if="!loginStatus" class="loginIn">
           <router-link to="/login">
             <span>登录</span>
           </router-link>
         </li>
-        <li v-if="loginUp" class="sign">
+        <li v-if="loginStatus" class="sign">
           <span>签到</span>
         </li>
-        <li v-if="loginUp" class="sayHi">
-          <span>您好，<b>{{userName}}</b></span>
+        <li v-if="loginStatus" class="sayHi">
+          <span>您好，<b>{{userInfo[0].REAL_NAME}}</b></span>
         </li>
-        <li v-if="loginUp" class="loginOut">
+        <li v-if="loginStatus" class="loginOut" @click="loginOut">
           <router-link to="/home">
             <span>退出登录</span>
           </router-link>
         </li>
         <li class="download">
-          <router-link to="/home">
+          <router-link to="/download">
             <span>下载客户端</span>
           </router-link>
         </li>
@@ -40,15 +40,29 @@
 </template>
 
 <script>
+  import  {phtservice} from '../../assets/js/phtservice'
+  import { mapState, mapGetters, mapActions} from 'vuex'
   export default {
     data () {
       return {
-        loginUp:false,
-        userName:'小胡'
+        userInfo:null,
       }
     },
+    computed: {
+      ...mapGetters([
+        'loginStatus'])
+    },
     methods: {
-
+      ...mapActions({setSignOut:'setSignOut'}),
+      init: function () {
+        this.userInfo = JSON.parse(phtservice.getStore('userInfo'))
+      },
+      loginOut:function () {
+        this.setSignOut()
+      }
+    },
+    created () {
+      this.init()
     }
   }
 </script>

@@ -10,6 +10,5 @@ const debug = process.env.NODE_EVN !== 'production' && process.env.NODE_EVN !== 
 export default new Vuex.Store({
   modules: {
   user//用户信息
-  // com //公共信息
-  },
+  }
 })
