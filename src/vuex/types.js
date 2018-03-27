@@ -5,15 +5,8 @@ export const COM_HEADER_STATUS  = 'COM_HEADER_STATUS'//
 export const COM_LOADING_STATUS = 'COM_LOADING_STATUS'
 export const COM_GETNAV_STATUS = 'COM_GETNAV_STATUS'
 
+export const SET_USER_INFO ='SET_USER_INFO'
+export const SET_LOGIN_STATUS ='SET_LOGIN_STATUS'
+export const GET_USER_DATA ='GET_USER_DATA'
 
-//
-export const COM_SHOW_TOAST      = 'COM_SHOW_TOAST'    //
-export const COM_TOAST_MSG       = 'COM_TOAST_MSG'    //
-export const COM_SHOW_SUCCESS    = 'COM_SHOW_SUCCESS'    //
-export const COM_SHOW_FAIL       = 'COM_SHOW_FAIL'    //
-
-export const COM_SHOW_ALERT      = 'COM_SHOW_ALERT'    //
-export const COM_ALERT_MSG       = 'COM_ALERT_MSG'    //
-
-export const COM_SHOW_TIME_PICKER       = 'COM_SHOW_TIME_PICKER'    //
 

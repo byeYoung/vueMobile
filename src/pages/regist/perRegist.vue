@@ -7,26 +7,26 @@
       <div class="registCon">
         <div class="userName">
             <em>*</em><span>手机号码：</span>
-            <input type="text" @blur="testMobile" v-model="userName" placeholder="请输入手机号" />
+            <input type="text" id="userName" @blur="testMobile" v-model="userName" placeholder="请输入手机号" v-focus />
         </div>
         <div class="userPaw">
             <em>*</em><span>设置密码：</span>
-            <input type="password" v-model="password" placeholder="请输入密码" />
+            <input type="password" @blur="testPwd" v-model="password" placeholder="请输入密码" />
         </div>
         <div class="userPawReg">
             <em>*</em><span>确认密码：</span>
-            <input type="password" v-model="passwordReg" placeholder="请输入确认密码" />
+            <input type="password" @blur="testRepwd" v-model="passwordReg" placeholder="请输入确认密码" />
         </div>
         <div class="reName">
           <span>推荐人手机号：</span>
-            <input type="text" v-model="reName" placeholder="请输入推荐人手机号" />
+            <input type="text" @blur="groomMobile()" v-model="reName" placeholder="请输入推荐人手机号" />
         </div>
         <div class="userCode">
               <span class="code">
                 <em>*</em><span>手机号验证码：</span>
               </span>
 
-            <input class="phoneCode" type="text" v-model="verificode" placeholder="手机验证码" />
+            <input class="phoneCode" type="text" max-length="6" @blur="testCode" v-model="verificode" placeholder="手机验证码" />
             <span class="verifiCode" @click="getVerifiCode" v-show="!sendCode">
                 获取验证码
             </span>
@@ -35,13 +35,12 @@
             </span>
         </div>
         <p class="regSelect">
-            <input id="checkBox" v-model="toggle" type="checkbox"  @change="checkAgree()"/><span>我同意《<a href="javascript:;">金梧桐注册协议</a>》 </span>
+            <input id="checkBox" v-model="toggle" type="checkbox"  v-show="!checkActive"/><span>我同意《<a href="javascript:;">金梧桐注册协议</a>》 </span>
         </p>
         <div class="loginBtn" @click="regist">下一步</div>
       </div>
 
-      <div class="regPic ">
-         <!-- <img src="../../assets/images/regist/zhucepeitu.png" alt=""> -->
+      <div class="regPic">
          <p>
            <a href="javascript:;">企业用户注册	&gt;&gt;</a>
          </p>
@@ -52,6 +51,7 @@
 
 <script>
   import { phtservice } from '../../assets/js/phtservice'
+  import { fun } from '../../assets/js/fun'
   export default {
     data(){
       return {
@@ -63,7 +63,8 @@
         sendCode: false,
         timeOut: 60,
         toggle:false,
-        flag:''
+        flag:'',
+        checkActive:false
      }
    },
    methods:{
@@ -71,7 +72,47 @@
      testMobile () {
       phtservice.globalPostData('/apis/xwuser/query/1.0/validLoginCode/1.0',phtservice.submitData({"MOBILE":this.userName})).then( (data) => {
         if(data.status == "00000000") {
-          alert("")
+          alert("此电话已存在")
+          this.userName = ''
+          return
+        }else {
+          return true
+        }
+      })
+     },
+//     设置密码
+    testPwd () {
+       if (fun.testPwd(this.password)) {
+         return true
+       }else {
+         alert("密码长度8-16位，必须包含字母和数字")
+         this.password = ''
+         return false
+       }
+    },
+//     再次输入密码
+     testRepwd () {
+       if(this.password == this.passwordReg){
+         return true
+       }else{
+         alert("请保持输入密码一致")
+         this.passwordReg = ''
+         return false
+       }
+     },
+//    推荐人手机号
+     groomMobile (mobile) {
+      let params = {
+        "LOGIN_CODE": this.reName,
+        "USER_TYPE": "1"
+      }
+      phtservice.globalPostData('/apis/xwuser/query/1.0/validLoginCodeIs/1.0',phtservice.submitData(params)).then((data) => {
+        if(data.status == "00000000") {
+          return true
+        }else{
+          alert(data.message)
+          this.reName = ''
+          return false
         }
       })
      },
@@ -88,10 +129,12 @@
         }
       })
      },
-     checkAgree:function () {
+//     验证码
+     testCode (){
 
      },
-     regist () {
+//     点击个人注册
+     async regist () {
 
      }
 
